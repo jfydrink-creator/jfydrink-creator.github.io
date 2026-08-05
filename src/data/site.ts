@@ -7,8 +7,8 @@ export const SITE = {
 };
 
 export const CONTACT = {
-  whatsapp: "34640326624",
-  whatsappDisplay: "+34 640 326 624",
+  whatsapp: "34640326623",
+  whatsappDisplay: "+34 640 326 623",
   whatsappMessage: "Hola! Me gustaría pedir información sobre la barra libre para mi evento.",
   phoneDisplay: "640 326 623 / 640 326 624",
   email: "jfy.drink@gmail.com",
