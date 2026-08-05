@@ -2,6 +2,16 @@
 
 Web de la barra móvil de cócteles para eventos y bodas. Página construida con Astro, 100% estática y gratis de mantener.
 
+**URL en producción:** https://jfydrink-creator.github.io
+
+Cada vez que subas cambios con `git push`, la web se publica sola (GitHub Actions).
+
+```sh
+git add -A
+git commit -m "Descripción del cambio"
+git push
+```
+
 ## Uso local
 
 ```sh
