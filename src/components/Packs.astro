@@ -1,0 +1,42 @@
+---
+import { PACKS, CONTACT } from "../data/site";
+---
+
+<section class="section" id="packs">
+  <div class="container">
+    <span class="section-eyebrow">Packs y precios</span>
+    <h2 class="section-title">Elige tu pack</h2>
+    <p class="section-subtitle">
+      Tres opciones para todos los gustos: cócteles exclusivos, dulces y más. Precios por persona y
+      hora.
+    </p>
+
+    <div class="packs-grid">
+      {PACKS.map((pack) => (
+        <article class:list={["pack", { highlight: pack.highlight }]}>
+          {pack.highlight && <span class="pack-badge">La más completa</span>}
+          <h3 class="pack-name">{pack.name}</h3>
+          <div class="pack-price">
+            <span class="amount">{pack.price}</span>
+            <span class="per">{pack.per}</span>
+          </div>
+          <ul>
+            {pack.features.map((f) => <li>{f}</li>)}
+          </ul>
+          <a
+            class:list={["btn", pack.highlight ? "btn-primary" : "btn-outline"]}
+            href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(`Hola! Me interesa el pack "${pack.name}" para mi evento.`)}`}
+            target="_blank"
+            rel="noopener"
+          >
+            Reservar este pack
+          </a>
+        </article>
+      ))}
+    </div>
+
+    <p class="packs-note">
+      <strong>Mínimo 50 personas.</strong> Escríbenos para valorar tu evento concreto.
+    </p>
+  </div>
+</section>

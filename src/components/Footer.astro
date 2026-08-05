@@ -1,0 +1,26 @@
+---
+import { SITE, CONTACT, SOCIAL } from "../data/site";
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="brand-name">{SITE.name}</div>
+    <p>{SITE.tagline}</p>
+    <p>Barra libre premium para eventos y bodas · {CONTACT.phoneDisplay}</p>
+    <div class="footer-links">
+      <a href={SOCIAL.instagram} target="_blank" rel="noopener">Instagram</a>
+      <a href={SOCIAL.bodasNet} target="_blank" rel="noopener">Bodas.net</a>
+      <a href={`mailto:${CONTACT.email}`}>Email</a>
+    </div>
+  </div>
+</footer>
+
+<a
+  class="whatsapp-float"
+  href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(CONTACT.whatsappMessage)}`}
+  target="_blank"
+  rel="noopener"
+  aria-label="Habla con nosotros por WhatsApp"
+>
+  ✆
+</a>

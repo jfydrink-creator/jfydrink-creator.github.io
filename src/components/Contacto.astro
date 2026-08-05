@@ -1,0 +1,77 @@
+---
+import { CONTACT, SOCIAL } from "../data/site";
+---
+
+<section class="section" id="contacto">
+  <div class="container">
+    <span class="section-eyebrow">Contacto</span>
+    <h2 class="section-title">Tu fiesta soñada, con nosotros</h2>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p>
+          Cuéntanos tu evento y te enviamos un presupuesto personalizado. Respondemos rápido por
+          WhatsApp.
+        </p>
+
+        <div class="contact-actions">
+          <a
+            class="contact-row"
+            href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(CONTACT.whatsappMessage)}`}
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="icon">✆</span>
+            <span>
+              <span class="label">WhatsApp</span><br />
+              <span class="value">{CONTACT.whatsappDisplay}</span>
+            </span>
+          </a>
+
+          <a class="contact-row" href={`mailto:${CONTACT.email}`}>
+            <span class="icon">✉</span>
+            <span>
+              <span class="label">Email</span><br />
+              <span class="value">{CONTACT.email}</span>
+            </span>
+          </a>
+
+          <a class="contact-row" href={`tel:+34640326623`}>
+            <span class="icon">✉</span>
+            <span>
+              <span class="label">Teléfono</span><br />
+              <span class="value">{CONTACT.phoneDisplay}</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="contact-extra">
+          <a class="btn btn-outline" href={SOCIAL.budgetForm} target="_blank" rel="noopener">
+            Solicita tu presupuesto aquí
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-info">
+        <p>Síguenos y descubre más momentos en nuestras redes.</p>
+        <div class="contact-actions">
+          <a class="contact-row" href={SOCIAL.instagram} target="_blank" rel="noopener">
+            <span class="icon">✆</span>
+            <span>
+              <span class="label">Instagram</span><br />
+              <span class="value">@jfy.drink</span>
+            </span>
+          </a>
+
+          <a class="contact-row" href={SOCIAL.bodasNet} target="_blank" rel="noopener">
+            <span class="icon">✉</span>
+            <span>
+              <span class="label">Reseñas</span><br />
+              <span class="value">Just For You Drink en Bodas.net</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

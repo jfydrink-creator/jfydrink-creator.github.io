@@ -1,0 +1,22 @@
+---
+import { FAQS } from "../data/site";
+---
+
+<section class="section" id="faq">
+  <div class="container">
+    <span class="section-eyebrow">Preguntas frecuentes</span>
+    <h2 class="section-title">Resolvemos tus dudas</h2>
+
+    <div class="faq-list">
+      {FAQS.map((item, i) => (
+        <div class="faq-item">
+          <input type="checkbox" id={`faq-${i}`} />
+          <label class="faq-question" for={`faq-${i}`}>{item.q}</label>
+          <div class="faq-answer">
+            <p>{item.a}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
