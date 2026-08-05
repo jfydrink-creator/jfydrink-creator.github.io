@@ -37,13 +37,12 @@ Gestiona el servidor con `astro dev stop`, `astro dev status` y `astro dev logs`
 - No añadir comentarios al código salvo que se pida.
 - Los cambios de contenido se hacen en `src/data/site.ts`, no en los componentes.
 
-## Despliegue gratis
+## Despliegue
 
-1. Sube el repositorio a GitHub (`justforyoudrink.github.io` si quieres ese dominio).
-2. Activa GitHub Pages en Settings → Pages → Build & deployment → GitHub Actions (o rama `main`).
-3. El build genera el sitio en `dist/` con `npm.cmd run build`.
-
-Alternativas sin GitHub: Netlify Drop o Vercel (arrastra la carpeta `dist/`).
+- Producción: https://jfydrink-creator.github.io (GitHub Pages + GitHub Actions).
+- Para publicar cambios: `git add -A`, `git commit -m "..."`, `git push`. El workflow `.github/workflows/deploy.yml` compila y publica solo.
+- El build local genera el sitio en `dist/` con `npm.cmd run build`.
+- Repositorio: https://github.com/jfydrink-creator/jfydrink-creator.github.io
 
 ## Documentación
 
