@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Just For You Drink · Barra libre premium para eventos y bodas en Cataluña</title>
+  <meta name="description" content="Barra libre móvil de cócteles premium para eventos y bodas en Cataluña. Bartenders profesionales, primeras marcas, cristalería de alta calidad, crepes y candy bar. Mínimo 50 personas. Pide tu presupuesto por WhatsApp.">
+  <meta name="author" content="Just For You Drink">
+  <meta name="theme-color" content="#0a0908">
+  <link rel="icon" type="image/svg+xml" href="assets/icon/logo.svg">
+  <link rel="canonical" href="https://justforyoudrink.es/">
+
+  <!-- Open Graph (preview en WhatsApp y redes) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Just For You Drink">
+  <meta property="og:title" content="Just For You Drink · Barra libre premium para tus eventos">
+  <meta property="og:description" content="Cócteles premium, bartenders profesionales y barra móvil para bodas y eventos en Cataluña. Todo incluido: montaje, cristalería y primeras marcas.">
+  <meta property="og:url" content="https://justforyoudrink.es/">
+  <meta property="og:image" content="https://justforyoudrink.es/assets/img/galeria_1.jpg">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="1066">
+  <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Just For You Drink · Barra libre premium">
+  <meta name="twitter:description" content="Cócteles premium y barra móvil para bodas y eventos en Cataluña. Todo incluido.">
+  <meta name="twitter:image" content="https://justforyoudrink.es/assets/img/galeria_1.jpg">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Datos estructurados (Schema.org) para SEO local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarOrPub",
+    "name": "Just For You Drink",
+    "slogan": "Exclusividad en cada copa, elegancia en cada momento",
+    "description": "Barra libre móvil de cócteles premium para eventos y bodas en Cataluña.",
+    "telephone": "+34 640 326 623",
+    "email": "jfy.drink@gmail.com",
+    "url": "https://justforyoudrink.es/",
+    "image": "https://justforyoudrink.es/assets/img/galeria_1.jpg",
+    "priceRange": "€€",
+    "areaServed": ["Cataluña", "Barcelona", "Girona", "Lleida", "Tarragona"],
+    "sameAs": [
+      "https://www.instagram.com/jfy.drink",
+      "https://www.bodas.net/food-truck-y-mesas-dulces/just-for-you-drink--e272721"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Packs de barra libre",
+      "itemListElement": [
+        { "@type": "Offer", "name": "Pack Básica", "price": "9", "priceCurrency": "EUR", "description": "Ginebra, vodka, whisky, licores, ron, cervezas Estrella Damm y refrescos premium. Cristalería de alta calidad. Precio por persona y hora." },
+        { "@type": "Offer", "name": "Pack + Cócteles Exclusivos", "price": "10", "priceCurrency": "EUR", "description": "Todo lo de la Básica más mojitos de fresa o lima u 2 cócteles a elección con bartenders profesionales." },
+        { "@type": "Offer", "name": "Pack + Buffet de Crepes y Dulces", "price": "12", "priceCurrency": "EUR", "description": "Todo lo de la Básica más buffet de crepes recién hechos y candy bar de dulces." },
+        { "@type": "Offer", "name": "Pack Completa", "price": "14", "priceCurrency": "EUR", "description": "Todo lo de la Básica, pack de mojitos, buffet de crepes, candy bar y palomitas recién hechas." }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ===== LOADER ===== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <span class="loader-brand">Just For You Drink</span>
+      <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+      <span class="loader-sub">Preparando tu barra…</span>
+    </div>
+  </div>
+
+  <!-- ===== CURSOR ===== -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#inicio" class="brand" aria-label="Just For You Drink, ir al inicio">
+        <img src="assets/icon/logo.svg" alt="Logo de Just For You Drink" width="42" height="42">
+        <span class="brand-txt">
+          <span class="brand-name">Just For You Drink</span>
+          <span class="brand-sub">Barra libre premium</span>
+        </span>
+      </a>
+      <input type="checkbox" id="nav-toggle" hidden>
+      <label for="nav-toggle" class="nav-toggle" aria-label="Abrir menú">☰</label>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#packs">Packs y precios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#testimonios">Opiniones</a>
+        <a href="#faq">Preguntas</a>
+        <a href="#contacto">Contacto</a>
+        <a class="btn btn-primary" href="https://wa.me/34640326623?text=Hola!%20Me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20sobre%20la%20barra%20libre%20para%20mi%20evento." target="_blank" rel="noopener">Escríbenos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO 3D ===== -->
+    <section class="hero" id="inicio">
+      <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata"
+        poster="assets/img/galeria_1.jpg" aria-hidden="true">
+        <source src="videos/video_3.mp4" type="video/mp4">
+      </video>
+      <div class="hero-bg-scrim" aria-hidden="true"></div>
+      <div class="hero-scene" id="heroScene" aria-hidden="true">
+        <div class="ice-cube ice-1"></div>
+        <div class="ice-cube ice-2"></div>
+        <div class="ice-cube ice-3"></div>
+        <div class="slice slice-1"></div>
+        <div class="slice slice-2"></div>
+        <div class="bubble b-1"></div>
+        <div class="bubble b-2"></div>
+        <div class="bubble b-3"></div>
+        <div class="bubble b-4"></div>
+        <div class="bubble b-5"></div>
+        <div class="spark s-1"></div>
+        <div class="spark s-2"></div>
+        <div class="spark s-3"></div>
+      </div>
+
+      <div class="hero-content">
+        <span class="hero-badge reveal">Eventos y bodas · Cataluña</span>
+        <h1 class="hero-title reveal">Just For You <span class="hero-drink">Drink</span></h1>
+        <p class="hero-sub reveal">Exclusividad en cada copa, elegancia en cada momento</p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="https://wa.me/34640326623?text=Hola!%20Me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20sobre%20la%20barra%20libre%20para%20mi%20evento." target="_blank" rel="noopener">Pide tu presupuesto</a>
+          <a class="btn btn-outline" href="#packs">Ver packs y precios</a>
+        </div>
+      </div>
+
+      <a href="#nosotros" class="hero-scroll" aria-label="Bajar a la sección nosotros">
+        <span></span><span></span><span></span>
+      </a>
+    </section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Cócteles de autor</span><i>·</i>
+        <span>Primeras marcas</span><i>·</i>
+        <span>Bodas</span><i>·</i>
+        <span>Bartenders</span><i>·</i>
+        <span>Crepes</span><i>·</i>
+        <span>Candy bar</span><i>·</i>
+        <span>Barra móvil</span><i>·</i>
+        <span>Mojitos</span><i>·</i>
+        <span>Cócteles de autor</span><i>·</i>
+        <span>Primeras marcas</span><i>·</i>
+        <span>Bodas</span><i>·</i>
+        <span>Bartenders</span><i>·</i>
+        <span>Crepes</span><i>·</i>
+        <span>Candy bar</span><i>·</i>
+        <span>Barra móvil</span><i>·</i>
+        <span>Mojitos</span><i>·</i>
+      </div>
+    </div>
+
+    <!-- ===== NOSOTROS ===== -->
+    <section class="section" id="nosotros">
+      <div class="container">
+        <div class="sobre-grid">
+          <div class="sobre-text">
+            <span class="section-eyebrow">Sobre nosotros</span>
+            <h2 class="section-title reveal">Barra libre premium para tus eventos</h2>
+            <p class="reveal">Nos especializamos en ofrecer una experiencia única con una <strong>barra libre</strong> que incluye una amplia variedad de bebidas alcohólicas y licores de la más alta calidad.</p>
+            <p class="reveal">Contamos con un equipo de bartenders profesionales dedicados a brindarte un servicio impecable, cuidando cada detalle para que tú y tus invitados solo tengan que disfrutar.</p>
+            <blockquote class="quote reveal">"Convierte tu celebración en un recuerdo inolvidable con nosotros."</blockquote>
+            <div class="stats reveal">
+              <div class="stat"><span class="stat-num" data-count="50">50</span><span class="stat-label">personas mín.</span></div>
+              <div class="stat"><span class="stat-num">100%</span><span class="stat-label">montaje incluido</span></div>
+              <div class="stat"><span class="stat-num">4</span><span class="stat-label">packs a elegir</span></div>
+            </div>
+          </div>
+          <div class="sobre-media reveal">
+            <div class="tilt-card">
+              <img src="assets/img/galeria_1.jpg" alt="Barra móvil de cócteles montada en un evento, con botellas premium y copas de cristal" width="1600" height="1066" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PACKS (scroll horizontal 3D) ===== -->
+    <section class="section section-packs" id="packs">
+      <div class="container">
+        <span class="section-eyebrow">Packs y precios</span>
+        <h2 class="section-title">Elige tu pack</h2>
+        <p class="section-subtitle">Cuatro opciones para todos los gustos: cócteles exclusivos, dulces y más. Precios por persona y hora.</p>
+      </div>
+      <div class="packs-viewport" data-hscroll>
+        <div class="packs-track">
+          <article class="pack tilt-card reveal">
+            <h3 class="pack-name">Básica</h3>
+            <div class="pack-price"><span class="amount">9€</span><span class="per">persona/hora</span></div>
+            <ul>
+              <li>Ginebra, vodka, whisky, licores y ron</li>
+              <li>Cervezas Estrella Damm</li>
+              <li>Refrescos premium</li>
+              <li>Cristalería de alta calidad</li>
+            </ul>
+            <a class="btn btn-outline" href="https://wa.me/34640326623?text=Hola!%20Me%20interesa%20el%20pack%20%22B%C3%A1sica%22%20para%20mi%20evento." target="_blank" rel="noopener">Reservar este pack</a>
+          </article>
+
+          <article class="pack tilt-card reveal">
+            <h3 class="pack-name">+ Cócteles Exclusivos</h3>
+            <div class="pack-price"><span class="amount">10€</span><span class="per">persona/hora</span></div>
+            <ul>
+              <li>Todo lo de la Básica</li>
+              <li>Mojitos de fresa o lima</li>
+              <li>O 2 cócteles a tu elección</li>
+              <li>Bartenders profesionales</li>
+            </ul>
+            <a class="btn btn-outline" href="https://wa.me/34640326623?text=Hola!%20Me%20interesa%20el%20pack%20%22%2B%20C%C3%B3cteles%20Exclusivos%22%20para%20mi%20evento." target="_blank" rel="noopener">Reservar este pack</a>
+          </article>
+
+          <article class="pack tilt-card reveal">
+            <h3 class="pack-name">+ Buffet de Crepes y Dulces</h3>
+            <div class="pack-price"><span class="amount">12€</span><span class="per">persona/hora</span></div>
+            <ul>
+              <li>Todo lo de la Básica</li>
+              <li>Buffet de crepes recién hechos</li>
+              <li>Candy bar de dulces</li>
+              <li>Un toque dulce y exclusivo</li>
+            </ul>
+            <a class="btn btn-outline" href="https://wa.me/34640326623?text=Hola!%20Me%20interesa%20el%20pack%20%22%2B%20Buffet%20de%20Crepes%20y%20Dulces%22%20para%20mi%20evento." target="_blank" rel="noopener">Reservar este pack</a>
+          </article>
+
+          <article class="pack pack-highlight tilt-card reveal">
+            <span class="pack-badge">La más completa</span>
+            <h3 class="pack-name">Completa</h3>
+            <div class="pack-price"><span class="amount">14€</span><span class="per">persona/hora</span></div>
+            <ul>
+              <li>Todo lo de la Básica</li>
+              <li>Pack de mojitos</li>
+              <li>Buffet de crepes y candy bar</li>
+              <li>Palomitas recién hechas</li>
+            </ul>
+            <a class="btn btn-primary" href="https://wa.me/34640326623?text=Hola!%20Me%20interesa%20el%20pack%20%22Completa%22%20para%20mi%20evento." target="_blank" rel="noopener">Reservar este pack</a>
+          </article>
+        </div>
+        <div class="packs-progress" aria-hidden="true"><span></span></div>
+      </div>
+      <p class="packs-note"><strong>Mínimo 50 personas.</strong> Escríbenos para valorar tu evento concreto.</p>
+    </section>
+
+    <!-- ===== GALERÍA ===== -->
+    <section class="section" id="galeria">
+      <div class="container">
+        <span class="section-eyebrow">Galería</span>
+        <h2 class="section-title">Nuestra barra en acción</h2>
+        <p class="section-subtitle">Así se vive una barra móvil Just For You Drink. Mira nuestras fotos y vídeos.</p>
+        <div class="galeria-grid">
+          <div class="galeria-item tilt-card"><img src="assets/img/galeria_1.jpg" alt="Barra móvil de cócteles en un evento al atardecer con botellas y copas iluminadas" width="1600" height="1066" loading="lazy"></div>
+          <div class="galeria-item tilt-card"><img src="assets/img/galeria_2.jpg" alt="Bartender preparando cócteles en la barra móvil durante una boda" width="1600" height="1066" loading="lazy"></div>
+          <div class="galeria-item tilt-card"><img src="assets/img/galeria_3.jpg" alt="Cócteles de autor servidos sobre la barra de madera con decoración elegante" width="1600" height="1066" loading="lazy"></div>
+          <div class="galeria-item tilt-card"><img src="assets/img/galeria_4.jpg" alt="Mojitos frescos con lima y menta preparados por el equipo de bartenders" width="1600" height="1066" loading="lazy"></div>
+          <div class="galeria-item tilt-card"><img src="assets/img/galeria_5.jpg" alt="Detalle de cristalería premium y bebidas de primeras marcas en la barra" width="1536" height="2048" loading="lazy"></div>
+          <div class="galeria-item galeria-cta tilt-card">
+            <a href="https://www.instagram.com/jfy.drink" target="_blank" rel="noopener" aria-label="Seguir a Just For You Drink en Instagram">
+              <span class="galeria-cta-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </span>
+              <span class="galeria-cta-txt">Síguenos en Instagram<br>@jfy.drink</span>
+            </a>
+          </div>
+        </div>
+        <div class="video-section">
+          <div class="video-card tilt-card">
+            <video autoplay muted loop playsinline preload="metadata"
+              poster="assets/img/galeria_3.jpg" aria-hidden="true">
+              <source src="videos/video_2.mp4" type="video/mp4">
+            </video>
+            <div class="video-card-scrim" aria-hidden="true"></div>
+            <div class="video-card-fx" aria-hidden="true">
+              <span class="fx-slice fx-s1"></span>
+              <span class="fx-slice fx-s2"></span>
+              <span class="fx-bubble fx-b1"></span>
+              <span class="fx-bubble fx-b2"></span>
+              <span class="fx-bubble fx-b3"></span>
+            </div>
+            <div class="video-card-caption">
+              <span class="video-card-label">Nuestra barra</span>
+              <span class="video-card-title">Cócteles en movimiento</span>
+            </div>
+          </div>
+
+          <div class="video-card tilt-card" style="margin-top:20px">
+            <video autoplay muted loop playsinline preload="metadata"
+              poster="assets/img/galeria_2.jpg" aria-hidden="true">
+              <source src="videos/video_3.mp4" type="video/mp4">
+            </video>
+            <div class="video-card-scrim" aria-hidden="true"></div>
+            <div class="video-card-fx" aria-hidden="true">
+              <span class="fx-slice fx-s1"></span>
+              <span class="fx-slice fx-s2"></span>
+              <span class="fx-bubble fx-b1"></span>
+              <span class="fx-bubble fx-b2"></span>
+              <span class="fx-bubble fx-b3"></span>
+            </div>
+            <div class="video-card-caption">
+              <span class="video-card-label">Ambientación</span>
+              <span class="video-card-title">El arte de la coctelería</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIOS ===== -->
+    <section class="section" id="testimonios">
+      <div class="container">
+        <span class="section-eyebrow">Opiniones</span>
+        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+        <div class="testi-carousel" data-carousel>
+          <div class="testi-track">
+            <figure class="testi-slide">
+              <blockquote>“La mejor decisión de nuestra boda. La barra fue el centro de la fiesta y los mojitos, un éxito total.”</blockquote>
+              <figcaption><strong>Marta y Jordi</strong><span>Boda · Girona</span></figcaption>
+            </figure>
+            <figure class="testi-slide">
+              <blockquote>“Profesionales, elegantes y con unas primeras marcas que sorprendieron a todos los invitados.”</blockquote>
+              <figcaption><strong>Laura</strong><span>Evento privado · Barcelona</span></figcaption>
+            </figure>
+            <figure class="testi-slide">
+              <blockquote>“Montaron y desmontaron todo sin que nos diéramos cuenta. Nosotros solo disfrutamos. Repetiremos seguro.”</blockquote>
+              <figcaption><strong>Carlos</strong><span>Comunidad · Costa Brava</span></figcaption>
+            </figure>
+          </div>
+          <div class="testi-nav">
+            <button class="testi-arrow" data-prev aria-label="Opinión anterior">←</button>
+            <div class="testi-dots" role="tablist" aria-label="Seleccionar opinión"></div>
+            <button class="testi-arrow" data-next aria-label="Siguiente opinión">→</button>
+          </div>
+        </div>
+        <p class="testi-note">¿Quieres leer más experiencias? <a href="https://www.bodas.net/food-truck-y-mesas-dulces/just-for-you-drink--e272721" target="_blank" rel="noopener">Consulta nuestras reseñas en Bodas.net</a></p>
+      </div>
+    </section>
+
+    <!-- ===== TODO INCLUIDO ===== -->
+    <section class="section" id="incluido">
+      <div class="container">
+        <span class="section-eyebrow">Todo incluido</span>
+        <h2 class="section-title">Con nosotros no tienes que preocuparte por nada</h2>
+        <div class="features-grid">
+          <article class="feature tilt-card reveal">
+            <div class="feature-icon">✦</div>
+            <h3>Bartenders profesionales</h3>
+            <p>Especialistas en coctelería clásica y de autor que crean el mejor ambiente.</p>
+          </article>
+          <article class="feature tilt-card reveal">
+            <div class="feature-icon">✦</div>
+            <h3>Cristalería de alta calidad</h3>
+            <p>Copas y vasos premium en todas nuestras propuestas.</p>
+          </article>
+          <article class="feature tilt-card reveal">
+            <div class="feature-icon">✦</div>
+            <h3>Primeras marcas</h3>
+            <p>Ginebra, vodka, ron, whisky y Estrella Damm. Bebidas premium siempre.</p>
+          </article>
+          <article class="feature tilt-card reveal">
+            <div class="feature-icon">✦</div>
+            <h3>Montaje y desmontaje</h3>
+            <p>Todo incluido: nosotros montamos y desmontamos, tú solo disfrutas.</p>
+          </article>
+          <article class="feature tilt-card reveal">
+            <div class="feature-icon">✦</div>
+            <h3>Opciones sin alcohol</h3>
+            <p>Cócteles sin alcohol, refrescos premium y opciones para niños.</p>
+          </article>
+          <article class="feature tilt-card reveal">
+            <div class="feature-icon">✦</div>
+            <h3>A partir de 50 personas</h3>
+            <p>Escíbenos para valorar tu caso concreto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section" id="faq">
+      <div class="container">
+        <span class="section-eyebrow">Preguntas frecuentes</span>
+        <h2 class="section-title">Resolvemos tus dudas</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <input type="checkbox" id="faq-0">
+            <label class="faq-question" for="faq-0">¿Ofrecéis opciones sin alcohol?</label>
+            <div class="faq-answer"><p>Sí, también preparamos cócteles sin alcohol, refrescos premium y opciones personalizadas para niños o personas que no beben alcohol.</p></div>
+          </div>
+          <div class="faq-item">
+            <input type="checkbox" id="faq-1">
+            <label class="faq-question" for="faq-1">¿Cuánto cuesta el servicio de barra libre?</label>
+            <div class="faq-answer"><p>Nuestros precios varían según el pack. La opción básica empieza desde 9€ por persona y hora. Consulta todos los detalles en la sección de packs.</p></div>
+          </div>
+          <div class="faq-item">
+            <input type="checkbox" id="faq-2">
+            <label class="faq-question" for="faq-2">¿En qué zonas ofrecéis el servicio?</label>
+            <div class="faq-answer"><p>Nos desplazamos por toda Catalunya (Girona, Barcelona y alrededores). Pregúntanos si tienes una ubicación concreta.</p></div>
+          </div>
+          <div class="faq-item">
+            <input type="checkbox" id="faq-3">
+            <label class="faq-question" for="faq-3">¿La barra incluye personal de servicio?</label>
+            <div class="faq-answer"><p>Sí, siempre. Nuestro equipo profesional se encarga de preparar, servir y crear el mejor ambiente en tu evento.</p></div>
+          </div>
+          <div class="faq-item">
+            <input type="checkbox" id="faq-4">
+            <label class="faq-question" for="faq-4">¿Qué tipo de bebidas incluís?</label>
+            <div class="faq-answer"><p>Trabajamos con primeras marcas: ginebra, vodka, ron, whisky, cervezas Estrella Damm y refrescos premium. También puedes añadir cócteles especiales, mojitos, crepes, candy bar o palomitas.</p></div>
+          </div>
+          <div class="faq-item">
+            <input type="checkbox" id="faq-5">
+            <label class="faq-question" for="faq-5">¿Hay un número mínimo de invitados?</label>
+            <div class="faq-answer"><p>Sí, ofrecemos servicio a partir de un mínimo de 50 personas. Escríbenos para valorar tu caso.</p></div>
+          </div>
+          <div class="faq-item">
+            <input type="checkbox" id="faq-6">
+            <label class="faq-question" for="faq-6">¿Cómo reservo?</label>
+            <div class="faq-answer"><p>Solo tienes que escribirnos por WhatsApp o rellenar el formulario de presupuesto. Nos pondremos en contacto contigo lo antes posible.</p></div>
+          </div>
+          <div class="faq-item">
+            <input type="checkbox" id="faq-7">
+            <label class="faq-question" for="faq-7">¿Qué necesitáis en el espacio del evento?</label>
+            <div class="faq-answer"><p>Necesitamos una zona estable y nivelada para montar la barra, acceso cómodo para el montaje y, si el evento es al aire libre, una zona protegida en caso de lluvia o viento. También requerimos un punto de luz cercano. Si tienes dudas, consúltanos.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section class="section" id="contacto">
+      <div class="container">
+        <span class="section-eyebrow">Contacto</span>
+        <h2 class="section-title">Tu fiesta soñada, con nosotros</h2>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p>Cuéntanos tu evento y te enviamos un presupuesto personalizado. Respondemos rápido por WhatsApp.</p>
+            <div class="contact-actions">
+              <a class="contact-row" href="https://wa.me/34640326623?text=Hola!%20Me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20sobre%20la%20barra%20libre%20para%20mi%20evento." target="_blank" rel="noopener">
+                <span class="icon" aria-hidden="true">✆</span>
+                <span><span class="label">WhatsApp</span><br><span class="value">+34 640 326 623</span></span>
+              </a>
+              <a class="contact-row" href="mailto:jfy.drink@gmail.com">
+                <span class="icon" aria-hidden="true">✉</span>
+                <span><span class="label">Email</span><br><span class="value">jfy.drink@gmail.com</span></span>
+              </a>
+              <a class="contact-row" href="tel:+34640326623">
+                <span class="icon" aria-hidden="true">✆</span>
+                <span><span class="label">Teléfono</span><br><span class="value">640 326 623</span></span>
+              </a>
+            </div>
+            <div class="contact-extra">
+              <a class="btn btn-outline" href="https://docs.google.com/forms/d/e/1FAIpQLSehRcq7aVSbMOQ65VGli6al4sAY9x8dc4HD2OljYjcruMCMxg/viewform" target="_blank" rel="noopener">Solicita tu presupuesto aquí</a>
+            </div>
+          </div>
+          <div class="contact-info">
+            <p>Síguenos y descubre más momentos en nuestras redes.</p>
+            <div class="contact-actions">
+              <a class="contact-row" href="https://www.instagram.com/jfy.drink" target="_blank" rel="noopener">
+                <span class="icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </span>
+                <span><span class="label">Instagram</span><br><span class="value">@jfy.drink</span></span>
+              </a>
+              <a class="contact-row" href="https://www.bodas.net/food-truck-y-mesas-dulces/just-for-you-drink--e272721" target="_blank" rel="noopener">
+                <span class="icon" aria-hidden="true">✦</span>
+                <span><span class="label">Reseñas</span><br><span class="value">Just For You Drink en Bodas.net</span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <img src="assets/icon/logo.svg" alt="Logo de Just For You Drink" width="52" height="52" loading="lazy">
+      <div class="brand-name">Just For You Drink</div>
+      <p>Exclusividad en cada copa, elegancia en cada momento</p>
+      <p>Barra libre premium para eventos y bodas · 640 326 623</p>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/jfy.drink" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.bodas.net/food-truck-y-mesas-dulces/just-for-you-drink--e272721" target="_blank" rel="noopener">Bodas.net</a>
+        <a href="mailto:jfy.drink@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <a class="whatsapp-float" href="https://wa.me/34640326623?text=Hola!%20Me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20sobre%20la%20barra%20libre%20para%20mi%20evento." target="_blank" rel="noopener" aria-label="Habla con nosotros por WhatsApp">✆</a>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
