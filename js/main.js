@@ -6,21 +6,22 @@
 
   var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- LOADER ---------- */
+  /* ---------- LOADER (breve: máx. ~0,6 s, y solo la primera visita) ---------- */
   var loader = document.getElementById("loader");
-  var loaderFill = loader.querySelector(".loader-bar-fill");
-  var progress = 0;
-  var loadTimer = setInterval(function () {
-    progress = Math.min(progress + Math.random() * 30, 100);
-    if (loaderFill) loaderFill.style.width = progress + "%";
-    if (progress >= 100) {
-      clearInterval(loadTimer);
-      setTimeout(function () { loader.classList.add("done"); }, 350);
+  if (loader) {
+    var seen = false;
+    try { seen = sessionStorage.getItem("jfy_seen") === "1"; sessionStorage.setItem("jfy_seen", "1"); } catch (e) {}
+    var loaderFill = loader.querySelector(".loader-bar-fill");
+    if (seen || prefersReduced) {
+      loader.classList.add("done");
+    } else {
+      requestAnimationFrame(function () { if (loaderFill) loaderFill.style.width = "100%"; });
+      setTimeout(function () { loader.classList.add("done"); }, 550);
     }
-  }, 150);
+  }
 
   /* ---------- CURSOR ---------- */
-  var cursor = document.getElementById("cursor");
+  var cursor = document.getElementById("cursor") || document.createElement("div");
   var mx = 0, my = 0, cx = 0, cy = 0;
   if (!prefersReduced && window.matchMedia("(pointer: fine)").matches) {
     window.addEventListener("mousemove", function (e) {
@@ -241,4 +242,46 @@
       });
     });
   }
+
+  /* ---------- CALCULADORA DE PRECIO ---------- */
+  var calc = document.getElementById("calculadora");
+  if (calc) {
+    var g = document.getElementById("calc-guests"), h = document.getElementById("calc-hours");
+    var gOut = document.getElementById("calc-guests-out"), hOut = document.getElementById("calc-hours-out");
+    var total = document.getElementById("calc-total"), detail = document.getElementById("calc-detail");
+    var wa = document.getElementById("calc-wa");
+    var fmt = { format: function (n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, "."); } };
+    function updateCalc() {
+      var pack = calc.querySelector('input[name="calc-pack"]:checked');
+      var guests = +g.value, hours = +h.value, price = +pack.value;
+      var sum = guests * hours * price;
+      gOut.textContent = guests;
+      hOut.textContent = hours;
+      total.textContent = fmt.format(sum) + " €";
+      detail.textContent = guests + " invitados × " + hours + " h × " + price + " €";
+      var msg = "Hola! Me gustaría pedir presupuesto para mi evento: " + guests + " invitados, " + hours +
+        " horas de barra, pack \"" + pack.getAttribute("data-name") + "\" (precio orientativo de la web: " +
+        fmt.format(sum) + " €). ¿Tenéis disponibilidad?";
+      wa.href = "https://wa.me/34640326623?text=" + encodeURIComponent(msg);
+    }
+    calc.addEventListener("input", updateCalc);
+    calc.addEventListener("change", updateCalc);
+    updateCalc();
+  }
+
+  /* ---------- BARRA FIJA MÓVIL: aparece tras el hero ---------- */
+  var mcta = document.querySelector(".mobile-cta");
+  var hero = document.querySelector(".hero");
+  if (mcta) {
+    if (hero && "IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        mcta.classList.toggle("show", !entries[0].isIntersecting);
+      }, { threshold: 0.15 }).observe(hero);
+    } else {
+      mcta.classList.add("show");
+    }
+  }
+
+  var y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
 })();

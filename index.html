@@ -16,8 +16,8 @@
 <meta property="og:description" content="Cócteles premium, bartenders profesionales y barra móvil para bodas y eventos en Cataluña. Todo incluido: montaje, cristalería y primeras marcas.">
 <meta property="og:url" content="https://justforyoudrink.es/">
 <meta property="og:image" content="https://justforyoudrink.es/assets/img/galeria_1.jpg">
-<meta property="og:image:width" content="1600">
-<meta property="og:image:height" content="1066">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
 <meta property="og:locale" content="es_ES">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
@@ -177,7 +177,7 @@ poster="assets/img/galeria_1.jpg" aria-hidden="true">
 </div>
 <div class="sobre-media reveal">
 <div class="tilt-card">
-<img src="assets/img/galeria_1.jpg" alt="Barra móvil de cócteles montada en un evento, con botellas premium y copas de cristal" width="1600" height="1066" loading="lazy">
+<picture><source srcset="assets/img/barra_evento.webp" type="image/webp"><img src="assets/img/barra_evento.jpg" alt="Bartender de Just For You Drink preparando un spritz en la barra móvil blanca durante una boda al aire libre" width="1080" height="1350" loading="lazy"></picture>
 </div>
 </div>
 </div>
@@ -211,7 +211,7 @@ poster="assets/img/galeria_1.jpg" aria-hidden="true">
 <li>Todo lo de la Básica</li>
 <li>Mojitos de fresa o lima</li>
 <li>O 2 cócteles a tu elección</li>
-<li>Bartenders profesionales</li>
+<li>Coctelería preparada al momento</li>
 </ul>
 <a class="btn btn-outline" href="https://wa.me/34640326623?text=Hola!%20Me%20interesa%20el%20pack%20%22%2B%20C%C3%B3cteles%20Exclusivos%22%20para%20mi%20evento." target="_blank" rel="noopener">Reservar este pack</a>
 </article>
@@ -241,7 +241,42 @@ poster="assets/img/galeria_1.jpg" aria-hidden="true">
 </div>
 <div class="packs-progress" aria-hidden="true"><span></span></div>
 </div>
-<p class="packs-note"><strong>Mínimo 50 personas.</strong> Escríbenos para valorar tu evento concreto.</p>
+<p class="packs-note"><strong>Todos los packs incluyen</strong> bartenders profesionales, cristalería, montaje y desmontaje. <strong>Mínimo 50 personas.</strong></p>
+<div class="container">
+<div class="calc reveal" id="calculadora">
+<div class="calc-head">
+<span class="section-eyebrow">Calculadora</span>
+<h3 class="calc-title">¿Cuánto costaría tu barra?</h3>
+<p class="calc-intro">Elige invitados, horas y pack y te mostramos un precio orientativo al momento.</p>
+</div>
+<form class="calc-form" onsubmit="return false">
+<div class="calc-field">
+<label for="calc-guests">Invitados <output id="calc-guests-out" for="calc-guests">100</output></label>
+<input type="range" id="calc-guests" min="50" max="300" step="10" value="100">
+<div class="calc-scale"><span>50</span><span>300</span></div>
+</div>
+<div class="calc-field">
+<label for="calc-hours">Horas de barra <output id="calc-hours-out" for="calc-hours">4</output></label>
+<input type="range" id="calc-hours" min="2" max="8" step="1" value="4">
+<div class="calc-scale"><span>2 h</span><span>8 h</span></div>
+</div>
+<fieldset class="calc-field calc-packs">
+<legend>Pack</legend>
+<label><input type="radio" name="calc-pack" value="9" data-name="Básica"><span>Básica <small>9 €</small></span></label>
+<label><input type="radio" name="calc-pack" value="10" data-name="+ Cócteles Exclusivos"><span>+ Cócteles <small>10 €</small></span></label>
+<label><input type="radio" name="calc-pack" value="12" data-name="+ Buffet de Crepes y Dulces"><span>+ Crepes y dulces <small>12 €</small></span></label>
+<label><input type="radio" name="calc-pack" value="14" data-name="Completa" checked><span>Completa <small>14 €</small></span></label>
+</fieldset>
+</form>
+<div class="calc-result" aria-live="polite">
+<span class="calc-result-label">Precio orientativo</span>
+<span class="calc-total" id="calc-total">5.600 €</span>
+<span class="calc-detail" id="calc-detail">100 invitados × 4 h × 14 €</span>
+<a class="btn btn-primary" id="calc-wa" href="https://wa.me/34640326623" target="_blank" rel="noopener">Pedir presupuesto con estos datos</a>
+<p class="calc-note">Calculado con las tarifas publicadas. Te confirmamos el precio final de tu evento por WhatsApp.</p>
+</div>
+</div>
+</div>
 </section>
 
 <!-- ===== GALERÍA ===== -->
@@ -251,11 +286,11 @@ poster="assets/img/galeria_1.jpg" aria-hidden="true">
 <h2 class="section-title">Nuestra barra en acción</h2>
 <p class="section-subtitle">Así se vive una barra móvil Just For You Drink. Mira nuestras fotos y vídeos.</p>
 <div class="galeria-grid">
-<div class="galeria-item tilt-card"><img src="assets/img/galeria_1.jpg" alt="Barra móvil de cócteles en un evento al atardecer con botellas y copas iluminadas" width="1600" height="1066" loading="lazy"></div>
-<div class="galeria-item tilt-card"><img src="assets/img/galeria_2.jpg" alt="Bartender preparando cócteles en la barra móvil durante una boda" width="1600" height="1066" loading="lazy"></div>
-<div class="galeria-item tilt-card"><img src="assets/img/galeria_3.jpg" alt="Cócteles de autor servidos sobre la barra de madera con decoración elegante" width="1600" height="1066" loading="lazy"></div>
-<div class="galeria-item tilt-card"><img src="assets/img/galeria_4.jpg" alt="Mojitos frescos con lima y menta preparados por el equipo de bartenders" width="1600" height="1066" loading="lazy"></div>
-<div class="galeria-item tilt-card"><img src="assets/img/galeria_5.jpg" alt="Detalle de cristalería premium y bebidas de primeras marcas en la barra" width="1536" height="2048" loading="lazy"></div>
+<div class="galeria-item tilt-card"><picture><source srcset="assets/img/galeria_1.webp" type="image/webp"><img src="assets/img/galeria_1.jpg" alt="Barra móvil de cócteles en un evento al atardecer con botellas y copas iluminadas" width="1200" height="800" loading="lazy"></picture></div>
+<div class="galeria-item tilt-card"><picture><source srcset="assets/img/galeria_2.webp" type="image/webp"><img src="assets/img/galeria_2.jpg" alt="Bartender preparando cócteles en la barra móvil durante una boda" width="1200" height="800" loading="lazy"></picture></div>
+<div class="galeria-item tilt-card"><picture><source srcset="assets/img/galeria_3.webp" type="image/webp"><img src="assets/img/galeria_3.jpg" alt="Cócteles de autor servidos sobre la barra de madera con decoración elegante" width="1200" height="800" loading="lazy"></picture></div>
+<div class="galeria-item tilt-card"><picture><source srcset="assets/img/galeria_4.webp" type="image/webp"><img src="assets/img/galeria_4.jpg" alt="Mojitos frescos con lima y menta preparados por el equipo de bartenders" width="1200" height="800" loading="lazy"></picture></div>
+<div class="galeria-item tilt-card"><picture><source srcset="assets/img/galeria_5.webp" type="image/webp"><img src="assets/img/galeria_5.jpg" alt="Detalle de cristalería premium y bebidas de primeras marcas en la barra" width="1200" height="1600" loading="lazy"></picture></div>
 <div class="galeria-item galeria-cta tilt-card">
 <a href="https://www.instagram.com/jfy.drink" target="_blank" rel="noopener" aria-label="Seguir a Just For You Drink en Instagram">
 <span class="galeria-cta-icon" aria-hidden="true">
@@ -272,8 +307,8 @@ poster="assets/img/galeria_1.jpg" aria-hidden="true">
 <div class="video-section">
 <div class="video-card tilt-card">
 <video autoplay muted loop playsinline preload="metadata"
-poster="assets/img/galeria_3.jpg" aria-hidden="true">
-<source src="videos/video_2.mp4" type="video/mp4">
+poster="assets/img/poster_video_2_web.jpg" aria-hidden="true">
+<source src="videos/video_2_web.mp4" type="video/mp4">
 </video>
 <div class="video-card-scrim" aria-hidden="true"></div>
 <div class="video-card-fx" aria-hidden="true">
@@ -290,8 +325,8 @@ poster="assets/img/galeria_3.jpg" aria-hidden="true">
 </div>
 <div class="video-card tilt-card" style="margin-top:20px">
 <video autoplay muted loop playsinline preload="metadata"
-poster="assets/img/galeria_2.jpg" aria-hidden="true">
-<source src="videos/video_3.mp4" type="video/mp4">
+poster="assets/img/poster_video_1_web.jpg" aria-hidden="true">
+<source src="videos/video_1_web.mp4" type="video/mp4">
 </video>
 <div class="video-card-scrim" aria-hidden="true"></div>
 <div class="video-card-fx" aria-hidden="true">
@@ -426,7 +461,7 @@ poster="assets/img/galeria_2.jpg" aria-hidden="true">
 <article class="feature tilt-card reveal">
 <div class="feature-icon">✦</div>
 <h3>A partir de 50 personas</h3>
-<p>Escíbenos para valorar tu caso concreto.</p>
+<p>Escríbenos para valorar tu caso concreto.</p>
 </article>
 </div>
 </div>
@@ -451,7 +486,7 @@ poster="assets/img/galeria_2.jpg" aria-hidden="true">
 <div class="faq-item">
 <input type="checkbox" id="faq-2">
 <label class="faq-question" for="faq-2">¿En qué zonas ofrecéis el servicio?</label>
-<div class="faq-answer"><p>Nos desplazamos por toda Catalunya (Girona, Barcelona y alrededores). Pregúntanos si tienes una ubicación concreta.</p></div>
+<div class="faq-answer"><p>Nos desplazamos por toda Cataluña: Barcelona, Girona, Tarragona, Lleida y alrededores. Pregúntanos si tienes una ubicación concreta.</p></div>
 </div>
 <div class="faq-item">
 <input type="checkbox" id="faq-3">
@@ -507,6 +542,7 @@ poster="assets/img/galeria_2.jpg" aria-hidden="true">
 <div class="contact-extra">
 <a class="btn btn-outline" href="https://docs.google.com/forms/d/e/1FAIpQLSehRcq7aVSbMOQ65VGli6al4sAY9x8dc4HD2OljYjcruMCMxg/viewform" target="_blank" rel="noopener">Solicita tu presupuesto aquí</a>
 </div>
+<p class="calc-note" style="margin-top:14px">Al escribirnos, tratamos tus datos solo para responder y preparar tu presupuesto. Más información en nuestra <a href="privacidad.html">política de privacidad</a>.</p>
 </div>
 <div class="contact-info">
 <p>Síguenos y descubre más momentos en nuestras redes.</p>
@@ -545,11 +581,23 @@ poster="assets/img/galeria_2.jpg" aria-hidden="true">
 <a href="https://www.bodas.net/food-truck-y-mesas-dulces/just-for-you-drink--e272721" target="_blank" rel="noopener">Bodas.net</a>
 <a href="mailto:jfy.drink@gmail.com">Email</a>
 </div>
+<div class="footer-legal">
+<a href="aviso-legal.html">Aviso legal</a>
+<a href="privacidad.html">Política de privacidad</a>
+<a href="cookies.html">Política de cookies</a>
+</div>
+<p class="footer-copy">© <span id="year">2026</span> Just For You Drink</p>
 </div>
 </footer>
 
 <!-- WhatsApp flotante -->
 <a class="whatsapp-float" href="https://wa.me/34640326623?text=Hola!%20Me%20gustar%C3%ADa%20pedir%20informaci%C3%B3n%20sobre%20la%20barra%20libre%20para%20mi%20evento." target="_blank" rel="noopener" aria-label="Habla con nosotros por WhatsApp">✆</a>
+
+<!-- Barra fija móvil -->
+<div class="mobile-cta" aria-label="Acciones rápidas">
+<a class="mobile-cta-calc" href="#calculadora">Calcular precio</a>
+<a class="mobile-cta-wa" href="https://wa.me/34640326623?text=Hola!%20Me%20gustar%C3%ADa%20pedir%20presupuesto%20para%20la%20barra%20libre%20de%20mi%20evento." target="_blank" rel="noopener">Pedir presupuesto</a>
+</div>
 
 <script src="js/main.js" defer></script>
 </body>
