@@ -1297,3 +1297,83 @@ html.lb-open { overflow: hidden; }
 .empresas-photos figure { margin: 0; aspect-ratio: 4 / 5; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
 .empresas-photos img { width: 100%; height: 100%; object-fit: cover; }
 @media (max-width: 700px) { .empresas-photos { grid-template-columns: 1fr; } .empresas-photos figure { aspect-ratio: 16 / 10; } }
+
+
+/* ============================================================
+   CONTENIDO DE LA PRESENTACIÓN · servicios, carta completa, marcas y momentos
+   ============================================================ */
+
+/* Etiquetas bajo el texto de "Nosotros" */
+.sobre-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 0; padding: 0; }
+.sobre-tags li {
+  border: 1px solid var(--border); border-radius: 999px; padding: 7px 16px;
+  font-size: .82rem; letter-spacing: .04em; color: var(--gold-soft); background: rgba(230,192,104,.06);
+}
+
+/* Servicios */
+.servicios-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 44px; }
+.servicio {
+  padding: 26px 22px; border: 1px solid var(--border); border-radius: var(--radius);
+  background: linear-gradient(170deg, var(--bg-card), var(--bg-soft));
+  transition: border-color .2s, transform .2s;
+}
+.servicio:hover { border-color: var(--gold); transform: translateY(-3px); }
+.servicio-num { font-size: .78rem; letter-spacing: .18em; color: var(--gold); font-weight: 600; }
+.servicio h3 { color: var(--gold); font-size: 1.35rem; margin: 14px 0 8px; }
+.servicio p { color: var(--text-dim); font-size: .95rem; }
+@media (max-width: 1000px) { .servicios-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 620px) {
+  .servicios-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .servicio { padding: 20px 18px; }
+  .servicio:last-child { grid-column: 1 / -1; }
+}
+
+/* Carta completa */
+.carta-cats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; align-items: start; }
+.carta-cat {
+  padding: 28px 26px; border: 1px solid var(--border); border-radius: var(--radius);
+  background: linear-gradient(170deg, var(--bg-card), var(--bg-soft));
+}
+.carta-cat h3 {
+  color: var(--gold); font-size: 1.35rem; line-height: 1.25; display: flex; gap: 10px; align-items: baseline;
+  margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(230,192,104,.2);
+}
+.carta-emoji { font-size: 1.4rem; }
+.carta-cat ul { list-style: none; }
+.carta-cat li {
+  position: relative; padding: 9px 0 9px 20px; color: var(--text); font-size: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+.carta-cat li:last-child { border-bottom: 0; }
+.carta-cat li::before {
+  content: ""; position: absolute; left: 2px; top: 50%; width: 6px; height: 6px; margin-top: -3px;
+  border-radius: 50%; background: var(--gold); opacity: .7;
+}
+@media (max-width: 900px) { .carta-cats { grid-template-columns: 1fr; } }
+
+/* Selección premium */
+.marcas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+.marca { padding: 24px 22px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-card); }
+.marca h3 {
+  color: var(--gold); font-family: var(--font-body); font-size: .8rem; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase; margin-bottom: 14px;
+}
+.marca ul { list-style: none; }
+.marca li { font-family: var(--font-head); font-size: 1.35rem; line-height: 1.35; color: var(--text); padding: 3px 0; }
+@media (max-width: 900px) { .marcas-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .marcas-grid { grid-template-columns: 1fr; } }
+
+/* Momentos que merecen un brindis */
+.momentos-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
+.momentos-list { list-style: none; border-top: 1px solid var(--border); }
+.momentos-list li { border-bottom: 1px solid var(--border); }
+.momentos-list a {
+  display: flex; align-items: center; gap: 22px; padding: 22px 6px; color: var(--text);
+  transition: background .2s, padding .2s, color .2s;
+}
+.momentos-list a:hover, .momentos-list a:focus-visible { background: rgba(230,192,104,.06); padding-left: 16px; color: var(--gold-soft); }
+.momento-num { font-size: .8rem; letter-spacing: .16em; color: var(--gold); font-weight: 600; min-width: 28px; }
+.momento-name { font-family: var(--font-head); font-size: clamp(1.25rem, 2.6vw, 1.7rem); flex: 1; }
+.momento-go { color: var(--gold); font-size: 1.3rem; transition: transform .2s; }
+.momentos-list a:hover .momento-go, .momentos-list a:focus-visible .momento-go { transform: translateX(4px); }
+@media (max-width: 900px) { .momentos-grid { grid-template-columns: 1fr; gap: 32px; } }
