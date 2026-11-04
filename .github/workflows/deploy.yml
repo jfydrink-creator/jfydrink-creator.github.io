@@ -20,6 +20,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Versionar CSS y JS (evita que el navegador use copias antiguas en caché)
+        run: |
+          V="${GITHUB_SHA::8}"
+          find . -type f -name '*.html' -not -path './.git/*' -print0 \
+            | xargs -0 sed -i -E "s#(css/style\.css|js/main\.js)(\?v=[A-Za-z0-9]+)?\"#\1?v=${V}\"#g"
+          grep -rhoE '(css/style\.css|js/main\.js)\?v=[A-Za-z0-9]+' --include='*.html' . | sort | uniq -c || true
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
