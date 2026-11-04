@@ -1340,3 +1340,7 @@ html.lb-open { overflow: hidden; }
 .section-light .testi-note { color: var(--ink-dim); }
 .section-light .testi-note a { color: var(--gold-deep); text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 960px) { .testi-track { grid-template-columns: 1fr; } .section-light .testi-carousel { max-width: 560px; margin-left: auto; margin-right: auto; } }
+
+
+/* ---------- Sello (emblema) del pie de página ---------- */
+.footer .footer-seal { width: 180px; height: auto; margin: 0 auto 18px; opacity: .96; }
