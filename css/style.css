@@ -1144,6 +1144,26 @@ button.btn { font-family: var(--font-body); }
   .hero-sub { margin-bottom: 26px; }
 }
 .hero-bg-img { object-position: 50% 100%; transform-origin: 50% 100%; }
+/* Pantallas anchas (más apaisadas que la foto, 3:2): la foto se ajusta a la ALTURA de la
+   ventana en lugar de recortarse por arriba y abajo, así la barra nunca sube hasta el texto.
+   Los bordes laterales se funden con el fondo oscuro del hero. */
+@media (min-width: 769px) and (min-aspect-ratio: 3/2) {
+  .hero-bg-img {
+    /* la caja mide exactamente lo que la foto (alto = el del hero, ancho por proporción)
+       y va centrada; así el difuminado actúa sobre el borde real de la imagen */
+    width: auto; height: 100%; left: 0; right: 0; margin: 0 auto;
+    object-fit: cover;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
+  }
+}
+/* Ventanas bajas: texto más compacto */
+@media (min-width: 769px) and (max-height: 760px) {
+  .hero-badge { margin-bottom: 12px; padding: 6px 16px; font-size: .76rem; }
+  .hero-title { font-size: clamp(2.4rem, 5.2vw, 3.8rem); margin-bottom: 8px; }
+  .hero-sub { margin-bottom: 18px; font-size: 1.08rem; }
+  .hero-actions .btn { padding: 11px 26px; }
+}
 @media (max-width: 768px) {
   .hero { align-items: center; }
   .hero-content { padding-top: 40px; }
