@@ -1344,3 +1344,8 @@ html.lb-open { overflow: hidden; }
 
 /* ---------- Sello (emblema) del pie de página ---------- */
 .footer .footer-seal { width: 180px; height: auto; margin: 0 auto 18px; opacity: .96; }
+
+
+/* ---------- Emblema completo en la cabecera ---------- */
+.brand .brand-logo { width: 64px; height: 64px; flex: none; border-radius: 0; box-shadow: none; object-fit: contain; }
+@media (max-width: 560px) { .brand .brand-logo { width: 52px; height: 52px; } }
