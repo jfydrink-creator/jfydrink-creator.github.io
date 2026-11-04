@@ -157,6 +157,8 @@
 
     var resizePacks = function () {
       max = Math.max(0, track.scrollWidth - viewport.clientWidth);
+      /* si todas las tarjetas caben, no hay nada que desplazar: se oculta la barra de progreso */
+      if (bar && bar.parentNode) bar.parentNode.hidden = max <= 0;
     };
     resizePacks();
     window.addEventListener("resize", resizePacks);
@@ -256,8 +258,6 @@
   var LANG = (document.documentElement.lang || "es").slice(0, 2);
   var T = {
     es: {
-      guests: "invitados", perGuest: "por invitado", extras: "Extras a consultar: ",
-      waCalc: function (d) { return "Hola! Me gustaría pedir presupuesto: " + d.guests + " invitados, " + d.hours + " horas, pack \"" + d.pack + "\" (orientativo web: " + d.total + " €)." + (d.extras ? " Extras: " + d.extras + "." : "") + " ¿Tenéis disponibilidad?"; },
       past: "Esa fecha ya ha pasado. Revisa el día, por favor.",
       soon: "Faltan muy pocos días: escríbenos por WhatsApp y lo miramos al momento.",
       busy: "Esa fecha ya está reservada en nuestro calendario. Escríbenos igualmente y vemos cómo ayudarte.",
@@ -272,8 +272,6 @@
       ui: { soundOn: "Activar sonido", soundOff: "Silenciar", lbLabel: "Galería de fotos ampliada", lbClose: "Cerrar", lbPrev: "Foto anterior", lbNext: "Foto siguiente" }
     },
     ca: {
-      guests: "convidats", perGuest: "per convidat", extras: "Extres a consultar: ",
-      waCalc: function (d) { return "Hola! M'agradaria demanar pressupost: " + d.guests + " convidats, " + d.hours + " hores, pack \"" + d.pack + "\" (orientatiu web: " + d.total + " €)." + (d.extras ? " Extres: " + d.extras + "." : "") + " Teniu disponibilitat?"; },
       past: "Aquesta data ja ha passat. Revisa el dia, si us plau.",
       soon: "Falten molt pocs dies: escriu-nos per WhatsApp i ho mirem de seguida.",
       busy: "Aquesta data ja està reservada al nostre calendari. Escriu-nos igualment i veiem com ajudar-te.",
@@ -289,50 +287,6 @@
     }
   }[LANG === "ca" ? "ca" : "es"];
   var WA = "https://wa.me/34640326623?text=";
-  var fmt = { format: function (n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, "."); } };
-
-  /* ---------- CALCULADORA DE PRECIO ---------- */
-  var calc = document.getElementById("calculadora");
-  var calcState = null;
-  if (calc) {
-    var g = document.getElementById("calc-guests"), h = document.getElementById("calc-hours");
-    var gOut = document.getElementById("calc-guests-out"), hOut = document.getElementById("calc-hours-out");
-    var total = document.getElementById("calc-total"), detail = document.getElementById("calc-detail");
-    var per = document.getElementById("calc-per"), exNote = document.getElementById("calc-extras-note");
-    var wa = document.getElementById("calc-wa");
-    function updateCalc() {
-      var pack = calc.querySelector('input[name="calc-pack"]:checked');
-      var guests = +g.value, hours = +h.value, price = +pack.value;
-      var extras = [].map.call(calc.querySelectorAll('input[name="calc-extra"]:checked'), function (c) { return c.value; });
-      var sum = guests * hours * price;
-      gOut.textContent = guests;
-      hOut.textContent = hours;
-      total.textContent = fmt.format(sum) + " €";
-      detail.textContent = guests + " " + T.guests + " × " + hours + " h × " + price + " €";
-      if (per) per.textContent = "≈ " + fmt.format(hours * price) + " € " + T.perGuest;
-      if (exNote) { exNote.hidden = !extras.length; exNote.textContent = T.extras + extras.join(", "); }
-      calcState = { guests: guests, hours: hours, pack: pack.getAttribute("data-name"), total: fmt.format(sum), extras: extras.join(", ") };
-      wa.href = WA + encodeURIComponent(T.waCalc(calcState));
-    }
-    calc.addEventListener("input", updateCalc);
-    calc.addEventListener("change", updateCalc);
-    updateCalc();
-
-    var toForm = document.getElementById("calc-to-form");
-    if (toForm) toForm.addEventListener("click", function () {
-      var f = document.getElementById("presupuesto");
-      if (!f || !calcState) return;
-      f.querySelector("#qf-guests").value = calcState.guests;
-      f.querySelector("#qf-hours").value = calcState.hours;
-      var sel = f.querySelector("#qf-pack");
-      for (var i = 0; i < sel.options.length; i++) if (sel.options[i].value === calcState.pack) sel.selectedIndex = i;
-      var msg = f.querySelector("#qf-msg");
-      if (calcState.extras && msg.value.indexOf(calcState.extras) === -1) msg.value = (msg.value ? msg.value + "\n" : "") + T.extras + calcState.extras;
-      f.dataset.estimate = calcState.total;
-      f.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth", block: "start" });
-      setTimeout(function () { f.querySelector("#qf-name").focus({ preventScroll: true }); }, 600);
-    });
-  }
 
   /* ---------- DISPONIBILIDAD DE FECHA ---------- */
   var booked = null;
