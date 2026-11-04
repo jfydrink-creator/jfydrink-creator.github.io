@@ -1,0 +1,10 @@
+Tipografías alojadas en este sitio (subconjunto latino, formato WOFF2):
+
+- Crimson Text, (c) Sebastian Kosch. Licencia SIL Open Font License 1.1.
+  https://fonts.google.com/specimen/Crimson+Text
+- Inter, (c) The Inter Project Authors. Licencia SIL Open Font License 1.1.
+  https://fonts.google.com/specimen/Inter
+
+Texto de la licencia: https://openfontlicense.org
+Se sirven desde este mismo dominio para que el navegador del visitante no
+tenga que conectarse a servidores de terceros para cargarlas.

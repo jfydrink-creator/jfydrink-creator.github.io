@@ -15,13 +15,22 @@
 <meta property="og:image" content="https://justforyoudrink.es/assets/photos/og-cover.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/crimson-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 <style>.reveal{opacity:1;transform:none}</style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<symbol id="i-martini" viewBox="0 0 24 24"><path d="M8 22h8"/><path d="M12 11v11"/><path d="m19 3-7 8-7-8Z"/></symbol>
+<symbol id="i-wine" viewBox="0 0 24 24"><path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></symbol>
+<symbol id="i-truck" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+<symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></symbol>
+<symbol id="i-cherry" viewBox="0 0 24 24"><path d="M2 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z"/><path d="M12 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z"/><path d="M7 14c3.22-2.91 4.29-8.75 5-12 1.66 2.38 4.94 9 5 12"/><path d="M22 9c-4.29 0-7.14-2.33-10-7 5.71 0 10 4.67 10 7Z"/></symbol>
+</svg>
 <header class="header legal-header">
 <div class="container header-inner">
 <a href="index.html" class="brand" aria-label="Just For You Drink, volver al inicio">
@@ -50,12 +59,12 @@
 <span class="section-eyebrow">Para qué eventos</span>
 <h2 class="section-title">Llevamos la barra a tu evento</h2>
 <div class="features-grid">
-<article class="feature"><div class="feature-icon">✦</div><h3>Cenas de empresa</h3><p>Cena de Navidad, de fin de temporada o celebración de objetivos.</p></article>
-<article class="feature"><div class="feature-icon">✦</div><h3>Inauguraciones</h3><p>Abre tu local, tienda u oficina con un cóctel de bienvenida.</p></article>
-<article class="feature"><div class="feature-icon">✦</div><h3>Presentaciones</h3><p>Lanzamientos de producto y eventos con clientes o prensa.</p></article>
-<article class="feature"><div class="feature-icon">✦</div><h3>Aniversarios</h3><p>Celebra los años de tu empresa con tu equipo y colaboradores.</p></article>
-<article class="feature"><div class="feature-icon">✦</div><h3>Team building</h3><p>Una barra de cócteles como plan diferente para el equipo.</p></article>
-<article class="feature"><div class="feature-icon">✦</div><h3>Eventos al aire libre</h3><p>Barra móvil para fincas, terrazas y espacios exteriores.</p></article>
+<article class="feature"><div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg></div><h3>Cenas de empresa</h3><p>Cena de Navidad, de fin de temporada o celebración de objetivos.</p></article>
+<article class="feature"><div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-sparkles"/></svg></div><h3>Inauguraciones</h3><p>Abre tu local, tienda u oficina con un cóctel de bienvenida.</p></article>
+<article class="feature"><div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg></div><h3>Presentaciones</h3><p>Lanzamientos de producto y eventos con clientes o prensa.</p></article>
+<article class="feature"><div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-wine"/></svg></div><h3>Aniversarios</h3><p>Celebra los años de tu empresa con tu equipo y colaboradores.</p></article>
+<article class="feature"><div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-martini"/></svg></div><h3>Team building</h3><p>Una barra de cócteles como plan diferente para el equipo.</p></article>
+<article class="feature"><div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-leaf"/></svg></div><h3>Eventos al aire libre</h3><p>Barra móvil para fincas, terrazas y espacios exteriores.</p></article>
 </div>
 </div>
 </section>
@@ -75,12 +84,12 @@
 <span class="section-eyebrow">Todo incluido</span>
 <h2 class="section-title">Sin complicaciones para tu empresa</h2>
 <div class="features-grid">
-<article class="feature"><div class="feature-icon">✦</div><h3>Bartenders profesionales</h3><p>Equipo con experiencia en eventos, atento y rápido en la barra.</p></article>
-<article class="feature"><div class="feature-icon">✦</div><h3>Primeras marcas</h3><p>Ginebra, vodka, ron, whisky, Estrella Damm y refrescos premium.</p></article>
-<article class="feature"><div class="feature-icon">✦</div><h3>Montaje y desmontaje</h3><p>Llegamos, montamos, servimos y lo dejamos todo recogido.</p></article>
-<article class="feature"><div class="feature-icon">✦</div><h3>Cristalería de calidad</h3><p>Copas de cristal que dan un toque elegante a tu evento.</p></article>
-<article class="feature"><div class="feature-icon">✦</div><h3>Opciones sin alcohol</h3><p>Cócteles sin alcohol para todos los invitados.</p></article>
-<article class="feature"><div class="feature-icon">✦</div><h3>Presupuesto a medida</h3><p>Precio por persona y hora, a partir de 50 invitados.</p></article>
+<article class="feature"><div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-martini"/></svg></div><h3>Bartenders profesionales</h3><p>Equipo con experiencia en eventos, atento y rápido en la barra.</p></article>
+<article class="feature"><div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg></div><h3>Primeras marcas</h3><p>Ginebra, vodka, ron, whisky, Estrella Damm y refrescos premium.</p></article>
+<article class="feature"><div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg></div><h3>Montaje y desmontaje</h3><p>Llegamos, montamos, servimos y lo dejamos todo recogido.</p></article>
+<article class="feature"><div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-wine"/></svg></div><h3>Cristalería de calidad</h3><p>Copas de cristal que dan un toque elegante a tu evento.</p></article>
+<article class="feature"><div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-leaf"/></svg></div><h3>Opciones sin alcohol</h3><p>Cócteles sin alcohol para todos los invitados.</p></article>
+<article class="feature"><div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-sparkles"/></svg></div><h3>Presupuesto a medida</h3><p>Precio por persona y hora, a partir de 50 invitados.</p></article>
 </div>
 <p class="packs-note" style="margin-top:36px;text-align:center">Packs desde <strong>6 € por persona y hora</strong>. <a href="index.html#packs">Ver los packs</a>.</p>
 </div>
