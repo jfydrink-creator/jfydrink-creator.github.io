@@ -30,9 +30,8 @@
 <meta content="Còctels prèmium i barra mòbil per a casaments i esdeveniments a Catalunya. Tot inclòs." name="twitter:description"/>
 <meta content="https://justforyoudrink.es/assets/photos/og-cover.jpg" name="twitter:image"/>
 <!-- Fuentes -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link rel="preload" href="../assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/crimson-text-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link href="../css/style.css" rel="stylesheet"/>
 <!-- Datos estructurados (Schema.org) para SEO local -->
 <script type="application/ld+json">
@@ -64,7 +63,7 @@
 }
 </script>
 <link rel="preload" as="image" href="../assets/photos/hero-barra-noche-1200.webp" imagesrcset="../assets/photos/hero-barra-noche-1200.webp 1200w, ../assets/photos/hero-barra-noche-2000.webp 2000w" imagesizes="100vw" fetchpriority="high">
-<noscript><style>.reveal{opacity:1;transform:none}.loader{display:none}</style></noscript>
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -75,17 +74,15 @@
 <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
 <symbol id="i-vol" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></symbol>
 <symbol id="i-mute" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></symbol>
+<symbol id="i-martini" viewBox="0 0 24 24"><path d="M8 22h8"/><path d="M12 11v11"/><path d="m19 3-7 8-7-8Z"/></symbol>
+<symbol id="i-wine" viewBox="0 0 24 24"><path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></symbol>
+<symbol id="i-truck" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+<symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></symbol>
+<symbol id="i-cherry" viewBox="0 0 24 24"><path d="M2 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z"/><path d="M12 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z"/><path d="M7 14c3.22-2.91 4.29-8.75 5-12 1.66 2.38 4.94 9 5 12"/><path d="M22 9c-4.29 0-7.14-2.33-10-7 5.71 0 10 4.67 10 7Z"/></symbol>
 </svg>
-<!-- ===== LOADER ===== -->
-<div aria-hidden="true" class="loader" id="loader">
-<div class="loader-inner">
-<span class="loader-brand">Just For You Drink</span>
-<div class="loader-bar"><div class="loader-bar-fill"></div></div>
-<span class="loader-sub">Preparant la teva barra…</span>
-</div>
-</div>
-<!-- ===== CURSOR ===== -->
-<div aria-hidden="true" class="cursor" id="cursor"></div>
 <!-- ===== HEADER ===== -->
 <header class="header">
 <div class="container header-inner">
@@ -116,16 +113,6 @@
 <img class="hero-bg-img" src="../assets/photos/hero-barra-noche-2000.webp" srcset="../assets/photos/hero-barra-noche-1200.webp 1200w, ../assets/photos/hero-barra-noche-2000.webp 2000w" sizes="100vw" width="2000" height="1335" alt="Barra mòbil blanca de Just For You Drink il·luminada de nit entre garlandes de llums" fetchpriority="high" decoding="async">
 <video class="hero-bg-video" data-src="../videos/hero-movil.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
 <div class="hero-bg-scrim" aria-hidden="true"></div>
-<div class="hero-scene" id="heroScene" aria-hidden="true">
-<div class="bubble b-1"></div>
-<div class="bubble b-2"></div>
-<div class="bubble b-3"></div>
-<div class="bubble b-4"></div>
-<div class="bubble b-5"></div>
-<div class="spark s-1"></div>
-<div class="spark s-2"></div>
-<div class="spark s-3"></div>
-</div>
 <div class="hero-content">
 <span class="hero-badge reveal">Esdeveniments i casaments · Catalunya</span>
 <h1 class="hero-title reveal">Just For You <span class="hero-drink">Drink</span></h1>
@@ -201,8 +188,13 @@
 </div>
 </div>
 </section>
+<!-- ===== BANDA ===== -->
+<figure class="photo-band" style="--band-pos: 50% 62%">
+<img src="../assets/photos/banda-barra-bn-2000.webp" srcset="../assets/photos/banda-barra-bn-1200.webp 1200w, ../assets/photos/banda-barra-bn-2000.webp 2000w" sizes="100vw" width="2000" height="1335" loading="lazy" decoding="async" alt="La barra mòbil blanca de Just For You Drink de nit, entre garlandes de llums, en blanc i negre">
+<figcaption>Una barra pensada per formar part de l'esdeveniment</figcaption>
+</figure>
 <!-- ===== PACKS (scroll horizontal 3D) ===== -->
-<section class="section section-packs" id="packs">
+<section class="section section-packs tone-warm" id="packs">
 <div class="container">
 <span class="section-eyebrow">Packs i preus</span>
 <h2 class="section-title">Tria el teu pack</h2>
@@ -272,15 +264,15 @@
 <p class="section-subtitle">Més de 20 còctels preparats al moment pels nostres bartenders. Tria els teus preferits per al gran dia.</p>
 <div class="carta-cats">
 <article class="carta-cat reveal">
-<h3><span class="carta-emoji" aria-hidden="true">🍓</span> Còctels refrescants i afruitats</h3>
+<h3><span class="carta-ico" aria-hidden="true"><svg class="ico" aria-hidden="true"><use href="#i-cherry"/></svg></span> Còctels refrescants i afruitats</h3>
 <ul><li>Mojito clàssic</li><li>Mojito de maduixa</li><li>Piña Colada</li><li>Aperol Spritz</li><li>Mimosa</li><li>Moscow Mule</li><li>Cosmopolitan</li><li>Margarita</li><li>Margarita picant de cogombre</li><li>Passion Fruit Martini</li></ul>
 </article>
 <article class="carta-cat reveal">
-<h3><span class="carta-emoji" aria-hidden="true">🍸</span> Còctels clàssics i elegants</h3>
+<h3><span class="carta-ico" aria-hidden="true"><svg class="ico" aria-hidden="true"><use href="#i-martini"/></svg></span> Còctels clàssics i elegants</h3>
 <ul><li>Negroni</li><li>Old Fashioned</li><li>Gin Tònic</li><li>Gin Lemon</li><li>Whisky Sour</li><li>Gimlet</li><li>French 75</li><li>Cuba Libre</li></ul>
 </article>
 <article class="carta-cat reveal">
-<h3><span class="carta-emoji" aria-hidden="true">🌿</span> Còctels especials</h3>
+<h3><span class="carta-ico" aria-hidden="true"><svg class="ico" aria-hidden="true"><use href="#i-sparkles"/></svg></span> Còctels especials</h3>
 <ul><li>Espresso Martini</li><li>Lychee Martini</li><li>Basil Smash</li><li>Pornstar Martini</li><li>Daiquiri</li><li>Tequila Sunrise</li></ul>
 </article>
 </div>
@@ -288,7 +280,7 @@
 </div>
 </section>
 <!-- ===== SELECCIÓN PREMIUM ===== -->
-<section class="section section-marcas" id="marcas">
+<section class="section section-marcas tone-warm" id="marcas">
 <div class="container">
 <span class="section-eyebrow">Marques reconegudes per a una barra a l'altura de l'esdeveniment</span>
 <h2 class="section-title">La nostra selecció prèmium</h2>
@@ -364,6 +356,11 @@
 </div>
 </section>
 
+<!-- ===== BANDA ===== -->
+<figure class="photo-band" style="--band-pos: 50% 54%">
+<img src="../assets/photos/banda-equipo-bn-2000.webp" srcset="../assets/photos/banda-equipo-bn-1200.webp 1200w, ../assets/photos/banda-equipo-bn-2000.webp 2000w" sizes="100vw" width="2000" height="1335" loading="lazy" decoding="async" alt="L'equip de Just For You Drink posant al costat de la barra, en blanc i negre">
+<figcaption>Passió, elegància i exclusivitat en cada servei</figcaption>
+</figure>
 <!-- ===== MOMENTOS ===== -->
 <section class="section section-momentos" id="momentos">
 <div class="container momentos-grid">
@@ -382,7 +379,7 @@
 </section>
 
 <!-- ===== TESTIMONIOS ===== -->
-<section class="section" id="testimonios">
+<section class="section section-light" id="testimonios">
 <div class="container">
 <span class="section-eyebrow">Opinions</span>
 <h2 class="section-title">El que diuen els nostres clients</h2>
@@ -391,55 +388,55 @@
 <figure class="testi-slide">
 <div aria-hidden="true" class="testi-rating">★★★★★</div>
 <p class="testi-title">Los mejores en coctelería</p>
-<blockquote>"¡La coctelería fue simplemente espectacular! Desde el primer momento, todo fue impecable: los cócteles estaban deliciosos, perfectamente preparados y con una presentación preciosa. Nuestros invitados no dejaron de comentarlos durante toda la boda."</blockquote>
+<blockquote>¡La coctelería fue simplemente espectacular! Desde el primer momento, todo fue impecable: los cócteles estaban deliciosos, perfectamente preparados y con una presentación preciosa. Nuestros invitados no dejaron de comentarlos durante toda la boda.</blockquote>
 <figcaption><strong>Daniela</strong><span>Boda · 16/07/2026</span></figcaption>
 </figure>
 <figure class="testi-slide">
 <div aria-hidden="true" class="testi-rating">★★★★★</div>
 <p class="testi-title">La millor barra lliure</p>
-<blockquote>"En Costy i el seu equip van fer que la barra lliure al nostre casament fos memorable. Diferents convidats em van venir a dir que estaven enamorats del tracte de l'equip, s'enrecordaven del que bevien y van estar hiper atents."</blockquote>
+<blockquote>En Costy i el seu equip van fer que la barra lliure al nostre casament fos memorable. Diferents convidats em van venir a dir que estaven enamorats del tracte de l'equip, s'enrecordaven del que bevien y van estar hiper atents.</blockquote>
 <figcaption><strong>Esther</strong><span>Boda · 13/07/2026</span></figcaption>
 </figure>
 <figure class="testi-slide">
 <div aria-hidden="true" class="testi-rating">★★★★★</div>
 <p class="testi-title">Servicio de barra libre impecable, ágil y muy flexible</p>
-<blockquote>"Contratar a este equipo para nuestra barra libre fue un acierto total. Desde el principio todo fueron facilidades. El servicio durante la boda fue fenomenal: el personal fue increíblemente ágil y rápido."</blockquote>
+<blockquote>Contratar a este equipo para nuestra barra libre fue un acierto total. Desde el principio todo fueron facilidades. El servicio durante la boda fue fenomenal: el personal fue increíblemente ágil y rápido.</blockquote>
 <figcaption><strong>Anna</strong><span>Boda · 24/06/2026</span></figcaption>
 </figure>
 <figure class="testi-slide">
 <div aria-hidden="true" class="testi-rating">★★★★★</div>
 <p class="testi-title">Una barra lliure espectacular que va sorprendre tothom</p>
-<blockquote>"Volem felicitar i agrair de tot cor a en Costi i a tot l'equip de Just for You Drinks per la feina increïble que van fer a la nostra barra lliure. Va ser, simplement, espectacular."</blockquote>
+<blockquote>Volem felicitar i agrair de tot cor a en Costi i a tot l'equip de Just for You Drinks per la feina increïble que van fer a la nostra barra lliure. Va ser, simplement, espectacular.</blockquote>
 <figcaption><strong>Mireia</strong><span>Boda · 09/06/2026</span></figcaption>
 </figure>
 <figure class="testi-slide">
 <div aria-hidden="true" class="testi-rating">★★★★★</div>
 <p class="testi-title">Perfecto, genial y elegante!</p>
-<blockquote>"La barra libre fue todo un éxito. Además de ser preciosa, encantó a todos nuestros invitados. Las copas son bonitas y de cristal, lo que aporta un toque elegante, y los mojitos se llevaron el protagonismo."</blockquote>
+<blockquote>La barra libre fue todo un éxito. Además de ser preciosa, encantó a todos nuestros invitados. Las copas son bonitas y de cristal, lo que aporta un toque elegante, y los mojitos se llevaron el protagonismo.</blockquote>
 <figcaption><strong>Montse</strong><span>Boda · 02/06/2026</span></figcaption>
 </figure>
 <figure class="testi-slide">
 <div aria-hidden="true" class="testi-rating">★★★★★</div>
 <p class="testi-title">La mejor barra libre + snacks 🤭🍸</p>
-<blockquote>"Contratamos los servicios de Just for Drinks para la barra libre de nuestra boda y no podemos estar más satisfechos. ¡El servicio un 10! Tanto Crina como Constan nos ayudaron a que todo fuera rodado. ¡Repetiríamos una y mil veces!"</blockquote>
+<blockquote>Contratamos los servicios de Just for Drinks para la barra libre de nuestra boda y no podemos estar más satisfechos. ¡El servicio un 10! Tanto Crina como Constan nos ayudaron a que todo fuera rodado. ¡Repetiríamos una y mil veces!</blockquote>
 <figcaption><strong>Carlota</strong><span>Boda · 07/05/2026</span></figcaption>
 </figure>
 <figure class="testi-slide">
 <div aria-hidden="true" class="testi-rating">★★★★★</div>
 <p class="testi-title">Quin festival ens van muntar😎</p>
-<blockquote>"El Costy i els seus companys van ser la bomba! 🥳 Les begudes espectaculars, els bartenders més ben parits impossibles 💃🕺🏻 Cada còctel era una obra d'art."</blockquote>
+<blockquote>El Costy i els seus companys van ser la bomba! 🥳 Les begudes espectaculars, els bartenders més ben parits impossibles 💃🕺🏻 Cada còctel era una obra d'art.</blockquote>
 <figcaption><strong>Mireia</strong><span>Boda · 11/11/2025</span></figcaption>
 </figure>
 <figure class="testi-slide">
 <div aria-hidden="true" class="testi-rating">★★★★★</div>
 <p class="testi-title">Profesionalidad y excelencia</p>
-<blockquote>"No tenemos palabras suficientes para agradecer a todo el equipo de Just For You Drink por haber sido una pieza clave para que pudiéramos disfrutar al máximo de nuestro día. Sus cócteles, elaborados con productos de primera calidad, fueron un éxito absoluto."</blockquote>
+<blockquote>No tenemos palabras suficientes para agradecer a todo el equipo de Just For You Drink por haber sido una pieza clave para que pudiéramos disfrutar al máximo de nuestro día. Sus cócteles, elaborados con productos de primera calidad, fueron un éxito absoluto.</blockquote>
 <figcaption><strong>Marina</strong><span>Boda · 17/10/2025</span></figcaption>
 </figure>
 <figure class="testi-slide">
 <div aria-hidden="true" class="testi-rating">★★★★★</div>
 <p class="testi-title">Los mejores!! - Els millors!!</p>
-<blockquote>"Constante y Crina son unos cracks! ¡Profesionales, cercanos, divertidos, se adaptan a todo lo que les pides! Nos han acompañado en Cal Pubill de Ciuret y nos han ayudado muchísimo."</blockquote>
+<blockquote>Constante y Crina son unos cracks! ¡Profesionales, cercanos, divertidos, se adaptan a todo lo que les pides! Nos han acompañado en Cal Pubill de Ciuret y nos han ayudado muchísimo.</blockquote>
 <figcaption><strong>Anna</strong><span>Boda · 25/09/2025</span></figcaption>
 </figure>
 </div>
@@ -459,32 +456,32 @@
 <h2 class="section-title">Amb nosaltres no t'has de preocupar de res</h2>
 <div class="features-grid">
 <article class="feature tilt-card reveal">
-<div class="feature-icon">✦</div>
+<div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-martini"/></svg></div>
 <h3>Bartenders professionals</h3>
 <p>Especialistes en coctelleria clàssica i d'autor que creen el millor ambient.</p>
 </article>
 <article class="feature tilt-card reveal">
-<div class="feature-icon">✦</div>
+<div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-wine"/></svg></div>
 <h3>Cristalleria d'alta qualitat</h3>
 <p>Copes i gots prèmium a la nostra barra i coctelleria.</p>
 </article>
 <article class="feature tilt-card reveal">
-<div class="feature-icon">✦</div>
+<div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-award"/></svg></div>
 <h3>Primeres marques</h3>
 <p>Ginebra, vodka, rom, whisky i Estrella Damm. Begudes prèmium sempre.</p>
 </article>
 <article class="feature tilt-card reveal">
-<div class="feature-icon">✦</div>
+<div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-truck"/></svg></div>
 <h3>Muntatge i desmuntatge</h3>
 <p>Tot inclòs: nosaltres muntem i desmuntem, tu només gaudeixes.</p>
 </article>
 <article class="feature tilt-card reveal">
-<div class="feature-icon">✦</div>
+<div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-leaf"/></svg></div>
 <h3>Opcions sense alcohol</h3>
 <p>Còctels sense alcohol, refrescos prèmium i opcions per a nens.</p>
 </article>
 <article class="feature tilt-card reveal">
-<div class="feature-icon">✦</div>
+<div class="feature-icon"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg></div>
 <h3>A partir de 50 persones</h3>
 <p>Escriu-nos per valorar el teu cas concret.</p>
 </article>
@@ -492,7 +489,7 @@
 </div>
 </section>
 <!-- ===== FAQ ===== -->
-<section class="section" id="faq">
+<section class="section tone-warm" id="faq">
 <div class="container">
 <span class="section-eyebrow">Preguntes freqüents</span>
 <h2 class="section-title">Resolem els teus dubtes</h2>

@@ -6,47 +6,6 @@
 
   var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- LOADER (breve: máx. ~0,6 s, y solo la primera visita) ---------- */
-  var loader = document.getElementById("loader");
-  if (loader) {
-    var seen = false;
-    try { seen = sessionStorage.getItem("jfy_seen") === "1"; sessionStorage.setItem("jfy_seen", "1"); } catch (e) {}
-    var loaderFill = loader.querySelector(".loader-bar-fill");
-    if (seen || prefersReduced) {
-      loader.classList.add("done");
-    } else {
-      requestAnimationFrame(function () { if (loaderFill) loaderFill.style.width = "100%"; });
-      setTimeout(function () { loader.classList.add("done"); }, 550);
-    }
-  }
-
-  /* ---------- CURSOR ---------- */
-  var cursor = document.getElementById("cursor") || document.createElement("div");
-  var mx = 0, my = 0, cx = 0, cy = 0;
-  if (!prefersReduced && window.matchMedia("(pointer: fine)").matches) {
-    window.addEventListener("mousemove", function (e) {
-      mx = e.clientX;
-      my = e.clientY;
-      cursor.style.opacity = 1;
-    });
-    document.addEventListener("mouseover", function (e) {
-      var t = e.target.closest("a, button, .tilt-card, [data-hscroll]");
-      if (t) cursor.classList.add("hovering");
-    });
-    document.addEventListener("mouseout", function (e) {
-      var t = e.target.closest("a, button, .tilt-card, [data-hscroll]");
-      if (t) cursor.classList.remove("hovering");
-    });
-    (function loop() {
-      cx += (mx - cx) * 0.2;
-      cy += (my - cy) * 0.2;
-      cursor.style.transform = "translate(" + cx + "px, " + cy + "px) translate(-50%, -50%)";
-      requestAnimationFrame(loop);
-    })();
-  } else {
-    cursor.style.display = "none";
-  }
-
   /* ---------- REVEAL ON SCROLL ---------- */
   if ("IntersectionObserver" in window) {
     var revealObserver = new IntersectionObserver(function (entries) {
@@ -87,66 +46,8 @@
     document.querySelectorAll(".stat-num[data-count]").forEach(function (el) { statsObs.observe(el); });
   }
 
-  /* ---------- TILT 3D CARDS ---------- */
-  if (!prefersReduced && window.matchMedia("(pointer: fine)").matches) {
-    document.querySelectorAll(".tilt-card").forEach(function (card) {
-      var strength = 10;
-      card.addEventListener("mousemove", function (e) {
-        var r = card.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width - 0.5;
-        var py = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform =
-          "rotateY(" + (px * strength) + "deg) rotateX(" + (-py * strength) + "deg) " +
-          "translateZ(10px)";
-      });
-      card.addEventListener("mouseleave", function () {
-        card.style.transform = "";
-      });
-    });
-  }
-
-  /* ---------- HERO PARALLAX 3D ---------- */
+  /* ---------- HERO ---------- */
   var hero = document.getElementById("inicio");
-  var sceneEl = document.getElementById("heroScene");
-  if (hero) {
-    var heroBgLayers = hero.querySelectorAll(".hero-bg-img, .hero-bg-video");
-    var heroMove = function (e) {
-      if (window.innerWidth < 768) return;
-      var x = (e.clientX / window.innerWidth - 0.5) * 2;
-      var y = (e.clientY / window.innerHeight - 0.5) * 2;
-      if (e.type === "mousemove") {
-        if (sceneEl) {
-          sceneEl.style.transform =
-            "rotateY(" + (x * 8) + "deg) rotateX(" + (-y * 8) + "deg) translateZ(0)";
-          document.querySelectorAll(".hero-scene > *").forEach(function (el) {
-            var depth = parseFloat(el.dataset.depth || "1");
-            el.style.translate = (x * 18 * depth) + "px " + (y * 18 * depth) + "px";
-          });
-        }
-        heroBgLayers.forEach(function (el) {
-          el.style.translate = (x * -10) + "px " + (y * -10) + "px";
-        });
-      }
-    };
-    hero.addEventListener("mousemove", heroMove);
-
-    /* Parallax sutil en las capas FX de las tarjetas de vídeo */
-    document.querySelectorAll(".video-card").forEach(function (card) {
-      card.addEventListener("mousemove", function (e) {
-        var r = card.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width - 0.5;
-        var py = (e.clientY - r.top) / r.height - 0.5;
-        card.querySelectorAll(".fx-slice, .fx-bubble").forEach(function (el) {
-          el.style.translate = (px * 22) + "px " + (py * 22) + "px";
-        });
-      });
-      card.addEventListener("mouseleave", function () {
-        card.querySelectorAll(".fx-slice, .fx-bubble").forEach(function (el) {
-          el.style.translate = "";
-        });
-      });
-    });
-  }
 
   /* ---------- SCROLL HORIZONTAL PACKS (sticky-style, scroll vertical) ---------- */
   var viewport = document.querySelector("[data-hscroll]");
@@ -187,49 +88,50 @@
     }
   }
 
-  /* ---------- TESTIMONIOS CARRUSEL ---------- */
+  /* ---------- TESTIMONIOS: varias tarjetas a la vez en escritorio, una en móvil ---------- */
   var carousel = document.querySelector("[data-carousel]");
   if (carousel) {
-    var slides = carousel.querySelectorAll(".testi-slide");
+    var slides = [].slice.call(carousel.querySelectorAll(".testi-slide"));
     var dotsWrap = carousel.querySelector(".testi-dots");
-    var current = 0;
-    var timer = null;
+    var dotText = (document.documentElement.lang || "es").slice(0, 2) === "ca" ? "Opinions" : "Opiniones";
+    var mqWide = window.matchMedia("(min-width: 961px)");
+    var perView = 1, page = 0, pages = 1, timer = null;
 
-    slides.forEach(function (_, i) {
-      var dot = document.createElement("button");
-      dot.className = "testi-dot" + (i === 0 ? " active" : "");
-      dot.setAttribute("role", "tab");
-      dot.setAttribute("aria-label", "Opinión " + (i + 1));
-      dot.addEventListener("click", function () {
-        go(i);
-        restart();
-      });
-      dotsWrap.appendChild(dot);
-    });
-
-    function go(i) {
-      current = i;
+    var go = function (p) {
+      page = (p + pages) % pages;
       slides.forEach(function (s, j) {
-        s.style.opacity = j === i ? 1 : 0;
-        s.style.transform = j === i ? "translateX(0)" : (j < i ? "translateX(-40px)" : "translateX(40px)");
-        s.style.display = j === i ? "block" : "none";
+        s.classList.toggle("is-off", !(j >= page * perView && j < (page + 1) * perView));
       });
-      carousel.querySelectorAll(".testi-dot").forEach(function (d, j) {
-        d.classList.toggle("active", j === i);
-      });
-    }
-    function next() { go((current + 1) % slides.length); }
-    function prev() { go((current - 1 + slides.length) % slides.length); }
-    function restart() {
-      if (timer) clearInterval(timer);
-      if (!prefersReduced) timer = setInterval(next, 6000);
-    }
+      [].forEach.call(dotsWrap.children, function (d, j) { d.classList.toggle("active", j === page); });
+    };
+    var stop = function () { if (timer) { clearInterval(timer); timer = null; } };
+    var restart = function () {
+      stop();
+      if (!prefersReduced) timer = setInterval(function () { go(page + 1); }, 8000);
+    };
+    var build = function () {
+      perView = mqWide.matches ? 3 : 1;
+      pages = Math.ceil(slides.length / perView);
+      dotsWrap.innerHTML = "";
+      for (var i = 0; i < pages; i++) {
+        (function (i) {
+          var dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "testi-dot";
+          dot.setAttribute("aria-label", dotText + " " + (i + 1));
+          dot.addEventListener("click", function () { go(i); restart(); });
+          dotsWrap.appendChild(dot);
+        })(i);
+      }
+      go(0);
+    };
 
-    var prevBtn = carousel.querySelector("[data-prev]");
-    var nextBtn = carousel.querySelector("[data-next]");
-    prevBtn.addEventListener("click", function () { prev(); restart(); });
-    nextBtn.addEventListener("click", function () { next(); restart(); });
-    go(0);
+    carousel.querySelector("[data-prev]").addEventListener("click", function () { go(page - 1); restart(); });
+    carousel.querySelector("[data-next]").addEventListener("click", function () { go(page + 1); restart(); });
+    carousel.addEventListener("mouseenter", stop);
+    carousel.addEventListener("mouseleave", restart);
+    if (mqWide.addEventListener) mqWide.addEventListener("change", function () { build(); restart(); });
+    build();
     restart();
   }
 
